@@ -54,3 +54,37 @@ class  Users{
         return $this->_mot_de_passe;
         }
     }
+
+}    
+}
+}
+
+
+public function recupDonnees(){
+
+require_once 'DAO.php'; 
+
+try { $dbh = new PDO ($dsn,$user,$password);
+
+} catch(PDOException $e) {
+    echo ' Test ';
+
+}
+
+$sth= $dsn->prepare("INSERT INTO Users (id,nom,prenom,mail,mot_de_passe ") VALUES (:id, :nom, :prenom, :mail, :mot_de_passe)");
+
+$sth->bindParam(':id', $this->getId());
+
+$sth->bindParam(':nom', $this->getNom());
+
+$sth->bindParam(':prenom', $this->getPrenom());
+
+$sth->bindParam(':mail', $this->getMail());
+
+$sth->bindParam(':mot_de_passe', $this->getMot_de_passe());
+
+
+$sth->execute();
+
+}
+}
