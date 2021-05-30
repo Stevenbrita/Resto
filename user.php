@@ -7,7 +7,7 @@ class  User{
     private $_useremail;
     private $_userpassword;
 
-    public function __construct ($id_user $firstname, $lastname, $useremail, $userpassword) {
+    public function __construct ($id_user, $firstname, $lastname, $useremail, $userpassword) {
         $this->SetId_user($id_user);
         $this->SetFirstname($firstname);
         $this->SetLastname($lastname);
