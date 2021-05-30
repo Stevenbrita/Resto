@@ -1,6 +1,6 @@
 <?php
 
-// Au sein de cette page j'ai crée une class User, on peut la considérer aussi comme un tableau, dans un premier temps je lui ai donné des attributs par le biais d'une fonction privée. //
+// Au sein de cette page j'ai crée une class Resto , on peut la considérer aussi comme un tableau, dans un premier temps je lui ai donné des attributs par le biais d'une fonction privée. //
 // Ensuite on procède à une instanciation grâce à une autre fonction nommée constructeur. Celle ci permet à mon objet User de lui définir de nouveaux arguments, ceux-ci peuvent avoir un type, être requis ou tout simplement avoir une valeur par défaut //
 
 
@@ -83,7 +83,7 @@ class Resto{
 
 
 // Dans les lignes de codes suivantes, j'ai préparé plusieurs requêtes qui me permettront de recevoir les données que je souhaite dans ma base de données. Par le biais de la function bindParam je vais récupérer l'id_user jusqu'au mot de passe de l'utilisateur.
-// La fonction require_once m'est utilise dans les cas où le même fichier risque d'être inclus et évalué plusieurs fois durant l'exécution d'un script. Grâce à elle je suis sûr qu'il ne sera inclus qu'une fois et il m'évitera les problèmes de re-déclarations de fonctions ou autres.
+// La fonction require_once m'est utile dans les cas où le même fichier risque d'être inclus et évalué plusieurs fois durant l'exécution d'un script. Grâce à elle je suis sûr qu'il ne sera inclus qu'une fois et il m'évitera les problèmes de re-déclarations de fonctions ou autres.
 
 
     public function recupDonnees(){
