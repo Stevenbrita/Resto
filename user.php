@@ -21,7 +21,7 @@ class  User{
 
 
      
-
+// En dessous j'ai utilisé deux fonctions Le Setter, qui a son importance pour le contrôle de la valeur qu'on veut écrire dans l'attribut. Puis Le Getter il s'agit de lecture publique le plus souvent, l'utiliser est utile que si l'attribut n'est pas accessible au départ et leur intérêt se résume généralement à retourner la valeur de l'attribut.
         }
 
     public function SetId_user($id_user) {
@@ -63,6 +63,9 @@ class  User{
 }    
 }
 }
+
+
+// Dans les lignes de codes suivantes, j'ai préparé plusieurs requêtes qui me permettront de recevoir les données que je souhaite dans ma base de données. Par le biais de la function bindParam je vais récupérer l'id_user jusqu'au mot de passe de l'utilisateur.
 
 
 public function recupDonnees(){
