@@ -73,17 +73,17 @@ class Reservation{
 
         }
         
-        $sth= $dsn->prepare("INSERT INTO Resto (name,address,type,picture,description ") VALUES (:name, :address, :type, :picture, :description)");
+        $sth= $dsn->prepare("INSERT INTO Reservation (id_reservation,dated,hour,id_user,id_resto ") VALUES (:id_reservation, :dated, :hour, :id_user, :id_resto)");
 
-        $sth->bindParam(':name', $this->getName());
+        $sth->bindParam(':id_reservation', $this->getId_reservation());
 
-        $sth->bindParam(':address', $this->getAddress());
+        $sth->bindParam(':dated', $this->getDated());
 
-        $sth->bindParam(':type', $this->getType());
+        $sth->bindParam(':hour', $this->getHour());
 
-        $sth->bindParam(':picture', $this->getPicture());
+        $sth->bindParam(':id_user', $this->getId_user());
 
-        $sth->bindParam(':description', $this->getDescription());
+        $sth->bindParam(':id_resto', $this->getId_resto());
 
 
         $sth->execute();
