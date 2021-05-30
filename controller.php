@@ -15,7 +15,7 @@ if (!empty($_POST['name']) && !empty($_POST['address'])  && !empty($_POST['type'
 $resto = new Resto($name, $address, $picture, $type, $description);
 
 $resto->envoisDonnees();
-echo "Ce restauraut" . " " . " est bien ajouté";
+echo "Ce restaurant" . " " . " est bien ajouté";
 
 }       
 
