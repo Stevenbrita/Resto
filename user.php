@@ -1,18 +1,18 @@
 <?php
 
 class  User{
-    
+    private $_id_user;
     private $_firstname;
     private $_lastname;
     private $_useremail;
     private $_userpassword;
 
-    public function __construct ($firstname, $lastname, $useremail, $userpassword) {
-       
-        $this->SetNom($firstname);
-        $this->SetPrenom($lastname);
-        $this->SetMail($useremail);
-        $this->SetMot_de_passe($userpassword);
+    public function __construct ($id_user $firstname, $lastname, $useremail, $userpassword) {
+        $this->SetId_user($id_user);
+        $this->SetFirstname($firstname);
+        $this->SetLastname($lastname);
+        $this->SetUseremail($useremail);
+        $this->SetUserpassword($userpassword);
     
 
 
@@ -20,8 +20,8 @@ class  User{
 
         }
 
-    public function SetId($id) {
-        $this->_id=$id; }
+    public function SetId_user($id_user) {
+        $this->_id_user=$id_user; }
     
     public function SetFirstname($firstname) { 
         $this->_firstname=$firstname;  }
@@ -38,6 +38,9 @@ class  User{
   
 }
 
+    public function GetId_user(){
+        return $this->_id_user;
+    }
 
     public function GetFirstname(){
         return $this->_firstname;
@@ -69,8 +72,9 @@ try { $dbh = new PDO ($dsn,$user,$password);
 
 }
 
-$sth= $dsn->prepare("INSERT INTO User (firstname,lastname,useremail,userpassword ") VALUES (:firstname, :lastname, :useremail, :userpassword)");
+$sth= $dsn->prepare("INSERT INTO User (id_user, firstname,lastname,useremail,userpassword ") VALUES ( :id_user :firstname, :lastname, :useremail, :userpassword)");
 
+$sth->bindParam(':id_user', $this->getId_user());
 
 $sth->bindParam(':firstname', $this->getFirstname());
 
