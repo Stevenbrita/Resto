@@ -1,5 +1,9 @@
 <?php
 
+// Au sein de cette page j'ai crée une class User, on peut la considérer aussi comme un tableau, dans un premier temps je lui ai donné des attributs par le biais d'une fonction privée. //
+// Ensuite on procède à une instanciation grâce à une autre fonction nommée constructeur. Celle ci permet à mon objet User de lui définir de nouveaux arguments, ceux-ci peuvent avoir un type, être requis ou tout simplement avoir une valeur par défaut //
+
+
 class  User{
     private $_id_user;
     private $_firstname;
