@@ -22,4 +22,19 @@ echo "Ce restaurant" . " " . " est bien ajouté";
 }
 
 
+require_once "User.php";
 
+if (isset($_POST['usersubmit'])){
+if (!empty($_POST['firstname']) && !empty($_POST['lastname'])  && !empty($_POST['useremail'] && !empty($_POST['userpassword'])){
+
+
+    $firstName = $_POST ['firstname' ];
+    $lastName = $_POST ['lastname'];
+    $userEmail = $_POST ['useremail'];
+    $userPassword = $_POST ['userpassword'];
+    
+
+$steven = new User ($firstName, $lastName, $userEmail, $userPassword);
+
+$steven->inscriptionUser();
+echo " Nouveau client :" . " " . $firstName . " " . $lastName; 
