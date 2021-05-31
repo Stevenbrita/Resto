@@ -1,5 +1,8 @@
 <?php
 
+// Dans cette page j'ai utilisé la fonction require_once plusieurs fois afin d'inclure les  mêmes fichiers et de les évaluer plusieurs fois durant l'exécution d'un script. Grâce à elle je suis sûr qu'il seront inclus qu'une fois et qu'ils m'éviteront les problèmes de re-déclarations de fonctions ou autres.
+// J'ai également eu recours à la méthode POST qui me permet d'emmagasiner toutes les valeurs "postées" dans un tableau associé, en notant les noms des données du formulaire, car ils représentent les clés dans le tableau associé à cette méthode.
+// Enfin j'ai crée 
 require_once "Resto.php";
 
 if (isset($_POST['submit'])){
@@ -12,9 +15,9 @@ if (!empty($_POST['name']) && !empty($_POST['address'])  && !empty($_POST['type'
     $type = $_POST ['type'];
     $description = $_POST ['description'];
 
-$resto = new Resto($name, $address, $picture, $type, $description);
+$restoAsiatique = new Resto($name, $address, $picture, $type, $description);
 
-$resto->envoisDonnees();
+$restoAsiatique->envoisDonnees();
 echo "Ce restaurant" . " " . " est bien ajouté";
 
 }       
